@@ -4,11 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;
 
+@NoArgsConstructor
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@RequiredArgsConstructor
 @ToString
 @EqualsAndHashCode
 @Entity
@@ -29,4 +27,16 @@ public class Person {
     @Column(name = "password")
     private String password;
 
+    public Person(String username, int yearOfBirth, String password) {
+        this.username = username;
+        this.yearOfBirth = yearOfBirth;
+        this.password = password;
+    }
+
+    public Person(long id, String username, int yearOfBirth, String password) {
+        this.id = id;
+        this.username = username;
+        this.yearOfBirth = yearOfBirth;
+        this.password = password;
+    }
 }

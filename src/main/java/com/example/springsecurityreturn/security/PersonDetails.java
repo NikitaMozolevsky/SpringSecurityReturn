@@ -16,6 +16,10 @@ public class PersonDetails implements UserDetails {
         this.person = person;
     }
 
+    //для получения данных аутентифицированного пользователя
+    public Person getPerson() {
+        return this.person;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
